@@ -17,10 +17,11 @@ image:
 tasks:
   - name: Generate cluster id
     command: kraft/scripts/create_cluster_id.sh
+
   - name: Update hosts file
     command: cp kraft/lab-initial-files/hosts /etc
 
-ports:
+# ports:
     
   # Confluent Server (broker)
   # - port: 9092
