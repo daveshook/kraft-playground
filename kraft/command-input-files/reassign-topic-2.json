@@ -9,6 +9,8 @@
         {"topic":"topic-2","partition":6,"replicas":[3,2,1]},
         {"topic":"topic-2","partition":7,"replicas":[3,2,1]},
         {"topic":"topic-2","partition":8,"replicas":[3,2,1]},
-        {"topic":"topic-2","partition":9,"replicas":[3,2,1]}
+        {"topic":"topic-2","partition":9,"replicas":[1,2,3]},
+        {"topic":"topic-2","partition":10,"replicas":[1,2,3]},
+        {"topic":"topic-2","partition":11,"replicas":[1,2,3]}
     ]
 }
