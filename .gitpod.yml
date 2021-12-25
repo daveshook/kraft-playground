@@ -18,6 +18,9 @@ tasks:
   - name: Generate cluster id
     command: /workspace/kraft-playground/kraft/scripts/create_cluster_id.sh
 
+  - name: Pre-load docker image to workspace 
+    command: docker pull confluentinc/cp-kafka:7.0.1-1-ubi8
+
 # ports:
     
   # Confluent Server (broker)
