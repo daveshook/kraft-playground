@@ -22,6 +22,7 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
       - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
+      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
@@ -47,6 +48,7 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
       - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
+      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
@@ -72,6 +74,7 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
       - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
+      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
@@ -101,6 +104,7 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
       - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
+      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
@@ -130,6 +134,7 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
       - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
+      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
@@ -159,6 +164,7 @@ services:
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
       - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
+      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
