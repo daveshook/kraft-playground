@@ -17,12 +17,15 @@ services:
       KAFKA_PROCESS_ROLES: 'controller,broker'
       KAFKA_NODE_ID: 1
       KAFKA_CONTROLLER_QUORUM_VOTERS: '1@server-1:9093,2@server-2:9093,3@server-3:9093'
-      KAFKA_METADATA_MAX_RETENTION_MS: 600000
-      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 3000
+      KAFKA_METADATA_LOG_SEGMENT_MS: 15000
+      KAFKA_METADATA_MAX_RETENTION_MS: 1200000
+      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 2800
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
-      - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
-      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
+      - ./command-input-files/reassign-topic-1-a.json:/tmp/reassign-topic-1-a.json
+      - ./command-input-files/reassign-topic-1-b.json:/tmp/reassign-topic-1-b.json
+      - ./command-input-files/reassign-topic-2-a.json:/tmp/reassign-topic-2-a.json
+      - ./command-input-files/reassign-topic-2-b.json:/tmp/reassign-topic-2-b.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
@@ -43,12 +46,15 @@ services:
       KAFKA_PROCESS_ROLES: 'controller,broker'
       KAFKA_NODE_ID: 2
       KAFKA_CONTROLLER_QUORUM_VOTERS: '1@server-1:9093,2@server-2:9093,3@server-3:9093'
-      KAFKA_METADATA_MAX_RETENTION_MS: 600000
-      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 3000
+      KAFKA_METADATA_LOG_SEGMENT_MS: 15000
+      KAFKA_METADATA_MAX_RETENTION_MS: 1200000
+      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 2800
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
-      - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
-      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
+      - ./command-input-files/reassign-topic-1-a.json:/tmp/reassign-topic-1-a.json
+      - ./command-input-files/reassign-topic-1-b.json:/tmp/reassign-topic-1-b.json
+      - ./command-input-files/reassign-topic-2-a.json:/tmp/reassign-topic-2-a.json
+      - ./command-input-files/reassign-topic-2-b.json:/tmp/reassign-topic-2-b.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
@@ -69,12 +75,15 @@ services:
       KAFKA_PROCESS_ROLES: 'controller,broker'
       KAFKA_NODE_ID: 3
       KAFKA_CONTROLLER_QUORUM_VOTERS: '1@server-1:9093,2@server-2:9093,3@server-3:9093'
-      KAFKA_METADATA_MAX_RETENTION_MS: 600000
-      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 3000
+      KAFKA_METADATA_LOG_SEGMENT_MS: 15000
+      KAFKA_METADATA_MAX_RETENTION_MS: 1200000
+      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 2800
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
-      - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
-      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
+      - ./command-input-files/reassign-topic-1-a.json:/tmp/reassign-topic-1-a.json
+      - ./command-input-files/reassign-topic-1-b.json:/tmp/reassign-topic-1-b.json
+      - ./command-input-files/reassign-topic-2-a.json:/tmp/reassign-topic-2-a.json
+      - ./command-input-files/reassign-topic-2-b.json:/tmp/reassign-topic-2-b.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
@@ -99,12 +108,15 @@ services:
       KAFKA_PROCESS_ROLES: 'broker'
       KAFKA_NODE_ID: 4
       KAFKA_CONTROLLER_QUORUM_VOTERS: '1@server-1:9093,2@server-2:9093,3@server-3:9093'
-      KAFKA_METADATA_MAX_RETENTION_MS: 600000
-      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 3000
+      KAFKA_METADATA_LOG_SEGMENT_MS: 15000
+      KAFKA_METADATA_MAX_RETENTION_MS: 1200000
+      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 2800
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
-      - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
-      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
+      - ./command-input-files/reassign-topic-1-a.json:/tmp/reassign-topic-1-a.json
+      - ./command-input-files/reassign-topic-1-b.json:/tmp/reassign-topic-1-b.json
+      - ./command-input-files/reassign-topic-2-a.json:/tmp/reassign-topic-2-a.json
+      - ./command-input-files/reassign-topic-2-b.json:/tmp/reassign-topic-2-b.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
@@ -129,12 +141,15 @@ services:
       KAFKA_PROCESS_ROLES: 'broker'
       KAFKA_NODE_ID: 5
       KAFKA_CONTROLLER_QUORUM_VOTERS: '1@server-1:9093,2@server-2:9093,3@server-3:9093'
-      KAFKA_METADATA_MAX_RETENTION_MS: 600000
-      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 3000
+      KAFKA_METADATA_LOG_SEGMENT_MS: 15000
+      KAFKA_METADATA_MAX_RETENTION_MS: 1200000
+      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 2800
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
-      - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
-      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
+      - ./command-input-files/reassign-topic-1-a.json:/tmp/reassign-topic-1-a.json
+      - ./command-input-files/reassign-topic-1-b.json:/tmp/reassign-topic-1-b.json
+      - ./command-input-files/reassign-topic-2-a.json:/tmp/reassign-topic-2-a.json
+      - ./command-input-files/reassign-topic-2-b.json:/tmp/reassign-topic-2-b.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
@@ -159,12 +174,15 @@ services:
       KAFKA_PROCESS_ROLES: 'broker'
       KAFKA_NODE_ID: 6
       KAFKA_CONTROLLER_QUORUM_VOTERS: '1@server-1:9093,2@server-2:9093,3@server-3:9093'
-      KAFKA_METADATA_MAX_RETENTION_MS: 600000
-      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 3000
+      KAFKA_METADATA_LOG_SEGMENT_MS: 15000
+      KAFKA_METADATA_MAX_RETENTION_MS: 1200000
+      KAFKA_METADATA_LOG_MAX_RECORD_BYTES_BETWEEN_SNAPSHOTS: 2800
       KAFKA_LOG_DIRS: '/tmp/kraft-combined-logs'
     volumes:
-      - ./command-input-files/reassign-topic-1.json:/tmp/reassign-topic-1.json
-      - ./command-input-files/reassign-topic-2.json:/tmp/reassign-topic-2.json
+      - ./command-input-files/reassign-topic-1-a.json:/tmp/reassign-topic-1-a.json
+      - ./command-input-files/reassign-topic-1-b.json:/tmp/reassign-topic-1-b.json
+      - ./command-input-files/reassign-topic-2-a.json:/tmp/reassign-topic-2-a.json
+      - ./command-input-files/reassign-topic-2-b.json:/tmp/reassign-topic-2-b.json
       - ./scripts/update_run.sh:/tmp/update_run.sh
       - ./clusterID:/tmp/clusterID
     command: "bash -c '/tmp/update_run.sh && /etc/confluent/docker/run'"
